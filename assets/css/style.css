@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P|VT323');
+
+/*BLUE COLOR? #2059b5*/
+
+body {
+	font-family: 'VT323', monospace;
+	background-color: #222;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+#main {
+	/*height: 100vh;*/
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+}
+
+#header {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2em;
+	background-color: #000;
+}
+
+#header h1 {
+	padding: 20px 0px;
+	text-align: center;
+	font-family: 'Press Start 2P', cursive;
+	color: #FFF;
+	text-shadow: 2px 2px 0px #000;
+}
+
+#content {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	background-color: #000;
+}
+
+#arena {
+	width: 100%;
+	height: 50%;
+	flex: 1;
+}
+
+#menu {
+	width: 100%;
+	height: 50%;
+	border-radius: 10px;
+	background-color: #2059B5; 
+	flex: 1;
+}
+
+#footer {
+	width: 100%;
+	height: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #000;
+	color: #FFF;
+}
+
+#display {
+	/*height: 100%;*/
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	align-items: center;
+}
+
+#footer {
+	padding: 10px 0;
+}
+
+#battleField {
+	width: 100%;
+}
+
+.container {
+	width: 70%;
+	/*height: 100%;*/
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex: 1;
+}
