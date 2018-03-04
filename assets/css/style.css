@@ -11,7 +11,6 @@ body {
 }
 
 #main {
-	/*height: 100vh;*/
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -33,7 +32,7 @@ body {
 	text-align: center;
 	font-family: 'Press Start 2P', cursive;
 	color: #000;
-	text-shadow: 0px 0px 10px #F00, 0px 0px 15px #DDD;
+	text-shadow: 0px 0px 10px #F00, 0px 0px 15px #F00;
 }
 
 #content {
@@ -55,14 +54,15 @@ body {
 #menu {
 	width: 100%;
 	height: 50%;
-	border-radius: 10px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
 	background-image: -ms-linear-gradient(top, #2059B5 0%, #000000 100%);
   background-image: -o-linear-gradient(top, #2059B5 0%, #000000 100%);
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2059B5), color-stop(100, #000000));
   background-image: -webkit-linear-gradient(top, #2059B5 0%, #000000 100%);
   background-image: linear-gradient(to bottom, #2059B5 0%, #000000 100%);
   border-left: 4px solid rgba(255, 255, 255, 0.6);
-  border-top: 4px solid rgba(255, 255, 255, 0.6);
+  border-top: 4px solid rgba(255, 255, 255, 0.7);
   border-right: 4px solid rgba(255, 255, 255, 0.6);
 	flex: 1.3;
 }
@@ -78,7 +78,7 @@ body {
 }
 
 #sound {
-	color: rgba(255, 255, 255, 0.6);
+	color: rgba(255, 0, 0, 0.6);
 }
 
 #display {
