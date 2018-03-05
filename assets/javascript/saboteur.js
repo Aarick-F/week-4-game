@@ -8,13 +8,19 @@ $(document).ready(function() {
 	this were expected of you..."
 	];
 
+	let game = false;
+	let knight = new Character("knight", 200, 50, 25);
+	let wizard = new Character("wizard", 125, 75, 30);
+	let cleric = new Character("cleric", 175, 50, 15);
+	let rogue = new Character("rogue", 150, 60, 35);
+
+
 	function printMessage(message) {
 		let counter = 0;
 		let parsed = "";
 		let print = setInterval(function() {
 			parsed += message[counter];
 			$("#info").text(parsed);
-			console.log(parsed);
 			counter++;
 			if(counter == message.length) {
 				clearInterval(print);
@@ -53,4 +59,9 @@ $(document).ready(function() {
 	$("#menu").on("click", function() {
 		printMessage(messages[1]);
 	});
+
+	$(".sprite").on("click", function() {
+		console.log(this);
+	});
+
 });
