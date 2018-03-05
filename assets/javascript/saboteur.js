@@ -8,14 +8,54 @@ $(document).ready(function() {
 	this were expected of you..."
 	];
 
+	const charcterCheck = ["knight", "wizard", "cleric", "rogue"];
+
 	let game = false;
+	let player;
+	let defender;
 	let knight = new Character("knight", 200, 50, 25);
 	let wizard = new Character("wizard", 125, 75, 30);
 	let cleric = new Character("cleric", 175, 50, 15);
 	let rogue = new Character("rogue", 150, 60, 35);
 
+	init();
+
+
+	function init() {
+		printMessage(messages[0]);
+	}
+
+	function selectPlayer() {
+		game = true;
+		$(".sprite").on("click", function(event) {
+			if(game == true && player == undefined) {
+				let playerSelection = event.target.id;
+				switch(playerSelection) {
+					case "knight":
+					player = knight;
+					break;
+					case "wizard":
+					player = wizard;
+					break;
+					case "cleric":
+					player = cleric;
+					break;
+					case "rogue":
+					player = rogue;
+				}
+
+				// Updates the screen after initial player selection
+				let playerSprite = $(this);
+				$("#playerSelection").append(playerSprite);
+				$("#npc").append($("#arena"));
+				$("#pit").css("flex", "2");
+			}
+		});
+	}
 
 	function printMessage(message) {
+		game = false;
+		$(".sprite").css("cursor", "mouse");
 		let counter = 0;
 		let parsed = "";
 		let print = setInterval(function() {
@@ -24,6 +64,9 @@ $(document).ready(function() {
 			counter++;
 			if(counter == message.length) {
 				clearInterval(print);
+				game = true;
+				$(".sprite").css("cursor", "pointer");
+				selectPlayer();
 			}
 		}, 30);
 	}
@@ -33,35 +76,5 @@ $(document).ready(function() {
 		this.health = health;
 		this.attack = attack;
 		this.retaliation;
-		this.special = function() {
-			primeSpecial(this.name);
-		}
 	}
-
-	function primeSpecial(name) {
-		switch(name) {
-			case "knight":
-			// Knight special effect here
-			break;
-			case "wizard":
-			// Wizard special effect here
-			break;
-			case "clearic":
-			// Cleric special effect here
-			break;
-			case "rogue":
-			// Rogue special here
-			break;
-		}
-	}
-
-	printMessage(messages[0]);
-	$("#menu").on("click", function() {
-		printMessage(messages[1]);
-	});
-
-	$(".sprite").on("click", function() {
-		console.log(this);
-	});
-
 });
